@@ -1,1 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BITRE - Bureau of Infrastructure, Transport and Regional Economics</title>
+    <meta name="description" content="Interactive data visualisation exploring Australian speeding statistics using BITRE data.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ===== Header & Navigation ===== -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <h1 class="logo-title">BITRE</h1>
+                <p class="logo-subtitle">Bureau of Infrastructure, Transport and Regional Economics</p>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="visualisation.html">Visualisation</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== Hero Section with Video Background ===== -->
+    <section class="hero">
+        <div class="video-container">
+            <video autoplay muted loop id="traffic-video">
+                <source src="assets/traffic-video.mp4" type="video/mp4">
+                <!-- Fallback image if video doesn't load -->
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="text-container">
+                <h2 class="hero-title">Explore Australia's Speeding Data</h2>
+                <p class="hero-description">Discover how speeding infringements have evolved across Australian jurisdictions using interactive D3 visualisations based on BITRE's comprehensive data.</p>
+                <a href="visualisation.html" class="btn-primary">View Visualisation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Data Visualization Preview ===== -->
+    <section class="preview dark-theme">
+        <div class="container">
+            <h3 class="section-title">Data Visualization Preview</h3>
+            <div class="preview-content">
+                <div class="preview-text">
+                    <p>Our interactive visualizations allow you to explore speeding enforcement data across Australian states and territories. Discover trends, patterns, and insights through dynamic charts and maps.</p>
+                    <div class="preview-features">
+                        <div class="feature">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Compare jurisdictions</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Analyze trends over time</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-camera"></i>
+                            <span>Explore detection methods</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>View geographic patterns</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-visual">
+                    <div class="chart-container">
+                        <div class="chart-title">Speeding Fines by Jurisdiction (2024)</div>
+                        <div class="chart-bars">
+                            <div class="bar" style="height: 85%;" data-value="3,250,000">
+                                <div class="bar-label">NSW</div>
+                            </div>
+                            <div class="bar" style="height: 65%;" data-value="2,100,000">
+                                <div class="bar-label">VIC</div>
+                            </div>
+                            <div class="bar" style="height: 45%;" data-value="1,450,000">
+                                <div class="bar-label">QLD</div>
+                            </div>
+                            <div class="bar" style="height: 40%;" data-value="1,200,000">
+                                <div class="bar-label">WA</div>
+                            </div>
+                            <div class="bar" style="height: 30%;" data-value="850,000">
+                                <div class="bar-label">SA</div>
+                            </div>
+                        </div>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <div class="color-box police"></div>
+                                <span>Police Issued</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="color-box camera"></div>
+                                <span>Camera Detected</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Research Questions ===== -->
+    <section class="research-questions dark-theme">
+        <div class="container">
+            <h3 class="section-title">Research Questions</h3>
+            <div class="questions-grid">
+                <div class="question-card">
+                    <div class="question-header">
+                        <div class="question-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h4>Jurisdictional Comparison</h4>
+                    </div>
+                    <p>Which jurisdiction recorded the highest number of speeding fines per 10,000 licences over the last five years (2020-2024), and how do the states and territories compare?</p>
+                </div>
+                <div class="question-card">
+                    <div class="question-header">
+                        <div class="question-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Enforcement Trends</h4>
+                    </div>
+                    <p>How has the total number of speeding fines and the proportion issued by cameras versus police changed from 2010 to 2024?</p>
+                </div>
+                <div class="question-card">
+                    <div class="question-header">
+                        <div class="question-icon">
+                            <i class="fas fa-virus"></i>
+                        </div>
+                        <h4>COVID-19 Impact</h4>
+                    </div>
+                    <p>Did the patterns of speeding enforcement (total fines and fines per 10,000 licences) show a significant change during the COVID-19 period (2020-2021) compared to the years immediately before and after?</p>
+                </div>
+                <div class="question-card">
+                    <div class="question-header">
+                        <div class="question-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h4>Detection Methods</h4>
+                    </div>
+                    <p>What is the distribution of speeding fines across different detection methods (e.g. Mobile Camera, Fixed Camera, Police Vehicle) for a selected jurisdiction and year?</p>
+                </div>
+                <div class="question-card">
+                    <div class="question-header">
+                        <div class="question-icon">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <h4>State Comparison</h4>
+                    </div>
+                    <p>How do the trends in speeding fines per 10,000 licences for the two most populous states, New South Wales and Victoria, compare over the last decade (2014-2024)?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Stats Section ===== -->
+    <section class="stats-section dark-theme">
+        <div class="container">
+            <h3 class="section-title">Key Statistics</h3>
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-car-crash"></i></div>
+                    <h4>3.3M+</h4>
+                    <p>Speeding infringements (2024)</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>544K</h4>
+                    <p>Police fines issued</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-camera"></i></div>
+                    <h4>2.7M+</h4>
+                    <p>Camera fines issued</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+        <p>&copy; 2025 BITRE Data Visualisation Project Team. All rights reserved.</p>
+    </footer>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
