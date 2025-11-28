@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - BITRE Speeding Data Visualisation</title>
-    <meta name="description" content="Learn about the BITRE speeding data visualisation project, its background, and objectives.">
+    <title>Visualisations - BITRE Speeding Data Visualisation</title>
+    <meta name="description" content="Interactive data visualisations exploring Australian speeding statistics using BITRE data.">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -32,8 +32,119 @@
     </header>
 
 
+    <!-- ===== Visualisation Section ===== -->
+    <main class="visualisation-main">
 
+        <!-- ===== Chart 1 Section ===== -->
+        <section id="chart1-section" class="chart-section">
+            <div class="section-header">
+                <div class="chart-number">1</div>
+                <h2>Which jurisdiction recorded the highest number of speeding fines per 10,000 licences over the last five years (2020–2024), and how do the states and territories compare?</h2>
+            </div>
 
+            <div class="chart-description">
+                <p>Over the five-year period from 2020 to 2024, Queensland (QLD) recorded the highest number of speeding fines per 10,000 licence holders, with a rate close to 48 fines per 10,000 licences.</p>
+                <p>Among the remaining jurisdictions, Western Australia (WA), the Northern Territory (NT), Tasmania (TAS), and the Australian Capital Territory (ACT) also show comparatively higher rates, all falling within roughly the 24–28 fines per 10,000 licences range.</p>
+                <p>In contrast, New South Wales (NSW), Victoria (VIC), and South Australia (SA) recorded substantially lower rates, with SA showing the lowest enforcement intensity of all jurisdictions.</p>
+                <p>Overall, the bar chart highlights significant variation across Australia:</p>
+                <ul>
+                    <li>QLD clearly stands out with the highest rate</li>
+                    <li>Several jurisdictions sit in a mid-range band</li>
+                    <li>NSW, VIC, and especially SA show noticeably lower levels of speeding fines per 10,000 licence holders</li>
+                </ul>
+            </div>
+
+            <!-- Chart container -->
+            <div id="chart1-speeding" class="chart"></div>
+       
+        </section>
+
+        <!-- ===== Chart 2 Section ===== -->
+        <section id="chart2-section" class="chart-section">
+            <div class="section-header">
+                <div class="chart-number">2</div>
+                <h2>How has the total number of speeding fines and the proportion issued by cameras versus police changed from 2010 to 2024?</h2>
+            </div>
+
+            <div class="chart-description">
+                <p>From 2010 to 2024, the total number of speeding fines shows clear year-to-year variation, but a consistent long-term pattern is visible. In the early 2010s, police-issued fines made up a larger share of overall enforcement, while camera-detected fines formed a smaller proportion.</p>
+                <p>Over time, this relationship gradually reversed. Camera-issued fines increased—both in absolute numbers and as a proportion of all speeding fines—while police-issued fines generally declined or remained comparatively stable.</p>
+                <p>Across the full period, cameras became the dominant method of enforcement, accounting for a growing majority of total fines in more recent years. As a result, the composition of speeding enforcement shifted from a police-led model to one increasingly driven by automated detection systems, even as the overall volume of fines fluctuated.</p>
+            </div>
+
+            <!-- Chart container -->
+            <div id="chart2" class="chart"></div>
+        
+        </section>
+
+        <!-- ===== Chart 3 Section ===== -->
+        <section id="chart3-section" class="chart-section">
+            <div class="section-header">
+                <div class="chart-number">3</div>
+                <h2>Did the patterns of speeding enforcement (total fines and fines per 10,000 licences) show a significant change during the COVID-19 period (2020–2021) compared to the years immediately before and after?</h2>
+            </div>
+
+            <div class="chart-description">
+                <p>The chart shows a clear change in speeding enforcement during the COVID-19 period (2020–2021). Both total speeding fines and fines per 10,000 licence holders drop noticeably compared with the years immediately before the pandemic. This decline aligns with reduced travel, movement restrictions, and lower traffic volumes during lockdown periods.</p>
+                <p>After 2021, both measures begin to rise again, indicating a return towards pre-COVID enforcement levels as mobility recovered. Overall, the visual evidence suggests that COVID-19 had a substantial impact on speeding enforcement activity, with a significant temporary reduction during the pandemic period followed by a gradual rebound.</p>
+            </div>
+
+            <!-- CHART 3A — Total Fines -->
+            <div class="subchart-header">
+                <h3>Total Speeding Fines (2014–2024)</h3>
+            </div>
+            <div id="chart3-total" class="chart"></div>
+            
+            <!-- CHART 3B — Fines Per 10k -->
+            <div class="subchart-header">
+                <h3>Fines per 10,000 Licences (2014–2024)</h3>
+            </div>
+            <div id="chart3-per10k" class="chart"></div>
+
+        </section>
+
+        <!-- ===== Chart 4 Section ===== -->
+        <section id="chart4-section" class="chart-section">
+            <div class="section-header">
+                <div class="chart-number">4</div>
+                <h2>What is the distribution of speeding fines across different detection methods (e.g. Mobile Camera, Fixed Camera, Police Vehicle) for a selected jurisdiction and year?</h2>
+            </div>
+
+            <div class="chart-description">
+                <p>This visualisation shows how speeding fines are distributed across different detection methods—such as mobile cameras, fixed cameras, and police vehicles—for any selected jurisdiction and year.</p>
+                <p>By choosing a specific region and time period, the pie chart highlights the share that each enforcement method contributes to the total fines issued. This makes it easy to see whether a jurisdiction relies more on automated cameras or police enforcement, and how these proportions differ across regions or change over time.</p>
+            </div>
+
+            <!-- Chart container for Chart 4 -->
+            <!-- Year buttons -->
+            <div id="chart4_controls" class="controls-container"></div>
+
+            <!-- Jurisdiction buttons -->
+            <div id="chart4_jurisdiction_controls" class="controls-container"></div>
+
+            <!-- Pie chart container -->
+            <div id="chart4" class="responsive-svg-container chart"></div>
+        
+        </section>
+
+        <!-- ===== Chart 5 Section ===== -->
+        <section id="chart5-section" class="chart-section">
+            <div class="section-header">
+                <div class="chart-number">5</div>
+                <h2>How do the trends in speeding fines per 10,000 licences for the two most populous states, New South Wales and Victoria, compare over the last decade (2014–2024)?</h2>
+            </div>
+
+            <div class="chart-description">
+                <p>This visualisation compares the trends in speeding fines per 10,000 licence holders between New South Wales (NSW) and Victoria (VIC) over the last decade (2014–2024).</p>
+                <p>By expressing fines relative to licence holders, the chart highlights differences in enforcement intensity between the two states, showing whether fines increased, decreased, or remained stable across the period.</p>
+                <p>Overall, both states show clear year-to-year fluctuations, but NSW consistently records higher fines per 10,000 licence holders than Victoria across most of the decade. NSW's rate shows more pronounced rises and falls, while Victoria's trend is generally lower and more stable. This suggests that, relative to the number of licence holders, speeding enforcement has been stronger or more variable in NSW than in Victoria over the period.</p>
+            </div>
+
+            <!-- Chart container for Chart 5 -->
+            <div id="chart5" class="chart"></div>
+        </section>
+
+    </main>
 
     <!-- ===== Footer ===== -->
     <footer>
@@ -42,5 +153,12 @@
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="js/animations.js"></script>
+    <script type="module" src="js/chart1.js"></script>
+    <script type="module" src="js/chart2.js"></script>
+    <script type="module" src="js/chart3_fines.js"></script>
+    <script type="module" src="js/chart3_per10k.js"></script>
+    <script type="module" src="js/chart4.js"></script>
+    <script type="module" src="js/chart5.js"></script>
+
 </body>
 </html>
